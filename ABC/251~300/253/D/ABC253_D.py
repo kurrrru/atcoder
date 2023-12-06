@@ -1,0 +1,9 @@
+n,a,b=map(int,input().split())
+s=n*(n+1)//2
+a_n=n//a
+b_n=n//b
+ab_n=n//(a*b)
+a_sum=a*(a_n*(a_n+1)//2)
+b_sum=b*(b_n*(b_n+1)//2)
+ab_sum=a*b*(ab_n*(ab_n+1)//2)
+print(int(s-a_sum-b_sum+ab_sum))
