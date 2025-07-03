@@ -1,14 +1,13 @@
 #include <bits/stdc++.h>
 #include <atcoder/all>
+using ll = long long;
 using namespace std;
 
-int main()
-{
+int main() {
 	int N, Q, t, u, v;
 	cin >> N >> Q;
 	atcoder::dsu dsu(N);
-	for (int i = 0; i < Q; i++)
-	{
+	for (int i = 0; i < Q; i++) {
 		cin >> t >> u >> v;
 		if (t == 0)
 			dsu.merge(u, v);
