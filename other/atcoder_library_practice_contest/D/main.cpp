@@ -17,7 +17,7 @@ int main () {
     for (ll i = 0; i < N; i++) {
         for (ll j = 0; j < M; j++) {
             ll index = i * M + j + 1;
-            if (index % 2 == 0)
+            if ((i+j) % 2 == 0)
                 g.add_edge(source, index, 1); // source
             else
                 g.add_edge(index, sink, 1); // sink
@@ -26,7 +26,7 @@ int main () {
             const vector<pair<ll, ll>> directions = {
                 {1, 0}, {0, 1}, {-1, 0}, {0, -1}
             };
-            if (index % 2 == 1)
+            if ((i+j) % 2 == 1)
                 continue;
             for (ll k = 0; k < 4; k++) {
                 ll ni = i + directions[k].first;
@@ -35,9 +35,7 @@ int main () {
                     if (S[ni][nj] == '#')
                         continue;
                     ll next_index = ni * M + nj + 1;
-                    if (index % 2 == 0) {
-                        g.add_edge(index, next_index, 1);
-                    }
+                    g.add_edge(index, next_index, 1);
                 }
             }
         }
